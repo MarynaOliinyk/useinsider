@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel Tests" verbose="1" thread-count="2" parallel="false">
+    <listeners>
+        <listener class-name="com.useinsider.utils.TestListener"/>
+    </listeners>
+    <test name="Chrome Tests" parallel="methods" thread-count="1">
+        <parameter name="browserName" value="chrome"/>
+        <packages>
+            <package name="com.useinsider.*"/>
+        </packages>
+    </test>
+    <test name="Firefox Tests" parallel="methods" thread-count="1">
+        <parameter name="browserName" value="firefox"/>
+        <packages>
+            <package name="com.useinsider.*"/>
+        </packages>
+    </test>
+</suite>
